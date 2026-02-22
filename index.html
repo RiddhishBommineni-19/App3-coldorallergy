@@ -105,29 +105,107 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
 	
-<div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-	
-    	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
-    	</div>
+<body>
+
+<!-- HOME PAGE -->
+<div class="w3-container w3-flat-carrot">
+  <h1>Cold or Allergy?</h1>
 </div>
 
-<div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
-	</div>
-</div>	
+<div class="w3-container">
+  <p>
+    Answer a few questions to see whether your symptoms
+    are more consistent with a cold or allergies.
+  </p>
 
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer>
+  <a href="#q1" class="w3-btn w3-black">Start</a>
+</div>
+
+<!-- QUESTION 1 -->
+<div class="page" id="q1">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are your eyes watery or itchy?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q2" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#q2" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="page" id="q2">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you have a fever?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q3" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#q3" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="page" id="q3">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you have a sore throat?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q4" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#q4" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="page" id="q4">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are your symptoms seasonal?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#q5" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- NEW ALLERGY QUESTION -->
+<div class="page" id="q5">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are you sneezing frequently?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q6" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#q6" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- NEW COLD QUESTION -->
+<div class="page" id="q6">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you feel body aches or fatigue?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#resultPage" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
+    <a href="#resultPage" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+  </div>
+</div>
+
+<!-- RESULTS PAGE -->
+<div class="page" id="resultPage">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Result</h2>
+  </div>
+
+  <div class="w3-container">
+    <p id="result"></p>
+    <a href="#resultPage" onclick="showResult()" class="w3-btn w3-black">
+      Show Result
+    </a>
+  </div>
+</div>
 
 </body>
 </html>
